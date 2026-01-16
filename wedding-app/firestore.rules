@@ -1,0 +1,54 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    /* =========================
+       GIFTS (estado visual)
+       ========================= */
+    match /gifts/{giftId} {
+
+      // Cualquiera puede ver la lista de regalos
+      allow read: if true;
+
+      // Solo se permite marcar selected: false -> true
+      allow update: if
+        resource.data.selected == false &&
+        request.resource.data.selected == true &&
+        request.resource.data.diff(resource.data).changedKeys()
+          .hasOnly(['selected']);
+
+      // Nadie puede crear ni borrar regalos desde la app
+      allow create, delete: if false;
+    }
+
+    /* =========================
+       GIFT SELECTIONS (histórico)
+       ========================= */
+    match /giftSelections/{selectionId} {
+
+      // Cualquiera puede crear una selección
+      allow create: if
+        request.resource.data.keys().hasAll([
+          'giftId',
+          'giftName',
+          'visibility',
+          'createdAt'
+        ]) &&
+        request.resource.data.visibility in ['public', 'anonymous'];
+
+      // Nadie puede leer selecciones desde la app
+      allow read: if false;
+
+      // Nadie puede modificar ni borrar selecciones
+      allow update, delete: if false;
+    }
+
+    /* =========================
+       CONFIG (lectura pública)
+       ========================= */
+    match /config/{docId} {
+      allow read: if true;
+      allow write: if false;
+    }
+  }
+}
