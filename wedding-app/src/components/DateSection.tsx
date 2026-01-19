@@ -5,12 +5,10 @@ export function DateSection() {
         Te esperamos para<br />celebrar nuestra boda
       </p>
 
-      <div className="date-line-wrapper">
-        <span className="date-text left">VIERNES</span>
-
+      <div className="date-row">
+        <span className="date-day">VIERNES</span>
         <span className="date-number">20</span>
-
-        <span className="date-text right">MARZO</span>
+        <span className="date-month">MARZO</span>
       </div>
 
       <button className="rsvp-btn">

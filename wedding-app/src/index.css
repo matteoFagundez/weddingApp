@@ -194,7 +194,6 @@ button {
   color: var(--muted);
 }
 
-
 .date-section {
   text-align: center;
   padding: 4rem 1.5rem;
@@ -205,69 +204,77 @@ button {
 
 .date-intro {
   margin-bottom: 2.5rem;
-  font-size: 1rem;
+  font-size: 1.3rem;
   letter-spacing: 0.05em;
 }
 
-/* CONTENEDOR PRINCIPAL */
-.date-line-wrapper {
+/* FILA PRINCIPAL */
+.date-row {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.8rem;              /* ajuste fino */
-  margin: 0 auto 2.8rem;
-  position: relative;
+  gap: 1.8rem;
+  margin-bottom: 2.8rem;
+  padding: 0.9rem 0; /* deja aire para las líneas */
 }
 
-/* TEXTOS VIERNES / MARZO */
-.date-text {
-  position: relative;
-  font-size: 0.95rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #8a927b;
-}
-
-/* LÍNEA INFERIOR DE VIERNES / MARZO */
-.date-text::after {
+/* DOS “RIELES” (ARRIBA Y ABAJO) */
+.date-row::before,
+.date-row::after {
   content: "";
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -6px;             /* subida óptica */
-  width: 52px;              /* largo correcto */
+  left: 0;
+  right: 0;
   height: 1px;
   background: #c9cebe;
+  z-index: 0;
+}
+
+/* riel superior */
+.date-row::before {
+  top: 0;
+}
+
+/* riel inferior */
+.date-row::after {
+  bottom: 0;
+}
+
+/* TEXTOS */
+.date-day,
+.date-month {
+  position: relative;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  padding: 0 0.4rem;     /* “corta” el riel detrás del texto */
+  background: #fbfaf6;   /* importante: tapa el riel */
+  z-index: 1;
 }
 
 /* NÚMERO CENTRAL */
 .date-number {
   position: relative;
-  font-size: 4rem;
+  font-size: 5.8rem;
   font-weight: 300;
-  line-height: 1;
-  padding: 0 1.2rem;
-  color: #8a927b;
+  line-height: 0.3;
+  padding: 1 0.9rem;     /* “hueco” central = calco del gap */
+  background: #fbfaf6;   /* tapa ambos rieles detrás */
+  z-index: 2;
+  transform: translateY(-0.85rem);
 }
-
-/* LÍNEAS A LOS LADOS DEL 20 */
-.date-number::before,
 .date-number::after {
   content: "";
   position: absolute;
-  top: 62%;                 /* alineación visual correcta */
-  width: 70px;
-  height: 1px;
-  background: #c9cebe;
+  left: 50%;
+  top: -1.2rem;
+  transform: translateX(-50%);
+  width: 5.2rem;              /* ancho exacto del hueco */
+  height: 6.4rem;             /* cubre ambas líneas */
+  background: #fbfaf6;        /* MISMO fondo */
+  z-index: -1;                /* queda detrás del número */
 }
 
-.date-number::before {
-  left: -80px;
-}
-
-.date-number::after {
-  right: -80px;
-}
 
 
 
