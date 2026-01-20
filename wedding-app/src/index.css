@@ -401,19 +401,9 @@ button {
   .ceremony-place {
     font-size: 22px;
   }
-  .hero-names {
-  max-width: 420px;      
-  margin: 0 auto;        
-  text-align: center;
-  font-family: "Allura", cursive;
-  font-size: 60px;
-  font-weight: 300;
-  line-height: 1;
-  margin: 0;
-  white-space: nowrap;
-  letter-spacing: 0.02em;
-  padding: 10px 10px 64px;
-}
+  .ceremony-section {
+    padding-bottom: 220px;
+  }
 }
 
 /*IMAGEN OLIVOS*/
@@ -721,5 +711,149 @@ button {
   .playlist-card {
     max-width: 520px;
     margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 48px 16px;
+  }
+
+  .section-title {
+    font-size: clamp(1.6rem, 6vw, 2.1rem);
+  }
+
+  .hero-overlay {
+    bottom: 24px;
+    padding: 0 12px;
+  }
+
+  .hero-eyebrow {
+    font-size: 1rem;
+    letter-spacing: 0.25em;
+  }
+
+  .hero-names {
+    max-width: 90vw;
+    font-size: 42px;
+    white-space: normal;
+    padding: 6px 6px 28px;
+  }
+
+  .hero-text {
+    padding: 40px 18px 48px;
+  }
+
+  .hero-text p {
+    font-size: 1.1rem;
+  }
+
+  .hero-verse {
+    font-size: 0.95rem;
+    letter-spacing: 0.12em;
+  }
+
+  .date-section {
+    padding: 3rem 1rem;
+  }
+
+  .date-intro {
+    font-size: 1.1rem;
+  }
+
+  .date-row {
+    gap: 1rem;
+    padding: 0.6rem 0;
+  }
+
+  .date-day,
+  .date-month {
+    font-size: 1.2rem;
+  }
+
+  .date-number {
+    font-size: 4.2rem;
+    transform: translateY(-0.5rem);
+  }
+
+  .date-number::after {
+    width: 3.8rem;
+    height: 5rem;
+    top: -0.9rem;
+  }
+
+  .olive-decoration {
+    width: 110px;
+    max-width: 55vw;
+  }
+
+  .dove-decoration {
+    width: 170%;
+  }
+
+  .party-section {
+    padding: 30px 16px 90px;
+  }
+
+  .party-icon {
+    width: min(100%, 320px);
+  }
+
+  .locations-grid {
+    gap: 18px;
+  }
+
+  .location-card {
+    padding: 26px 18px;
+  }
+
+  .playlist-section {
+    padding: 90px 16px;
+  }
+
+  .playlist-title {
+    font-size: 36px;
+    letter-spacing: 4px;
+  }
+
+  .playlist-bar {
+    width: 160px;
+  }
+
+  .playlist-controls {
+    gap: 14px;
+  }
+
+  .control-btn {
+    font-size: 26px;
+  }
+
+  .control-btn.play {
+    width: 46px;
+    height: 46px;
+  }
+
+  .playlist-text {
+    font-size: 18px;
+  }
+
+  .playlist-btn,
+  .rsvp-btn,
+  .ceremony-button,
+  .party-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-names {
+    font-size: 36px;
+  }
+
+  .ceremony-title,
+  .party-title {
+    font-size: 34px;
+    letter-spacing: 4px;
   }
 }
