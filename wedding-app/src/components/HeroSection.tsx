@@ -1,13 +1,16 @@
+import headerImage from "../assets/headerImage.jpeg"
 export function HeroSection() {
   return (
     <section className="hero-section">
       {/* IMAGEN */}
       <div className="hero-media">
-        <img
-          className="hero-image"
-          src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1600&q=80"
-          alt="Melany y Alem"
+        
+         <img
+            className="hero-image"
+            src={headerImage}
+            alt=""
         />
+
 
         <div className="hero-overlay">
           <span className="hero-eyebrow">NOS CASAMOS</span>

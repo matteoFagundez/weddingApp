@@ -5,7 +5,7 @@ export function CeremonyCard() {
       <h3 className="location-title">Ceremonia</h3>
       <p className="location-name">Jardines del Lago</p>
       <p className="location-time">17:00 hrs</p>
-      <button className="button">Cómo llegar</button>
+      <button className="rsvp-btn">Cómo llegar</button>
     </article>
   );
 }
