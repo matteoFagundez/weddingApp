@@ -988,12 +988,6 @@ button {
   margin-top: 24px;
 }
 
-.ghost-btn {
-  background: none;
-  border: none;
-  color: #9aa78c;
-  font-family: "Montserrat", sans-serif;
-}
 .gift-success {
   margin: 20px auto 0;
   font-family: "Cormorant Garamond", serif;
@@ -1199,4 +1193,67 @@ button {
 
 
 }
+
+/*INVITACIONES*/
+
+.attendance-form {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.attendance-form input,
+.attendance-form textarea {
+  border: 1px solid #d9ddcf;
+  border-radius: 14px;
+  padding: 12px 14px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 16px;
+  color: #6f7b63;
+  background: #fdfbf6;
+}
+
+.attendance-form textarea {
+  min-height: 80px;
+  resize: none;
+}
+
+.attendance-disclaimer {
+  font-size: 14px;
+  color: #9aa78c;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.attendance-success {
+  margin-top: 24px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  color: #9aa78c;
+  text-align: center;
+}
+
+.attendance-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.ghost-btn {
+  background: transparent;
+  border: 1px solid #9aa78c;
+  color: #9aa78c;
+  border-radius: 999px;
+  padding: 12px 24px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+}
+
+.ghost-btn:hover {
+  background: rgba(154, 167, 140, 0.08);
+}
+
 

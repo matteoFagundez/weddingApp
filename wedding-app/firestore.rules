@@ -42,6 +42,27 @@ service cloud.firestore {
       // Nadie puede modificar ni borrar selecciones
       allow update, delete: if false;
     }
+        /* =========================
+       ATTENDANCES (confirmaciones)
+       ========================= */
+    match /attendances/{attendanceId} {
+
+      // Cualquiera puede confirmar asistencia
+      allow create: if
+        request.resource.data.keys().hasAll([
+          'name',
+          'family',
+          'guests',
+          'createdAt'
+        ]);
+
+      // Nadie puede leer confirmaciones desde la app
+      allow read: if false;
+
+      // Nadie puede modificar ni borrar confirmaciones
+      allow update, delete: if false;
+    }
+
 
     /* =========================
        CONFIG (lectura pública)

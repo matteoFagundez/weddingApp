@@ -1,4 +1,9 @@
+import { useState } from "react";
+import { AttendanceForm } from "./AttendanceForm";
+
 export function DateSection() {
+  const [open, setOpen] = useState(false);
+
   return (
     <section className="date-section">
       <p className="date-intro">
@@ -11,9 +16,16 @@ export function DateSection() {
         <span className="date-month">MARZO</span>
       </div>
 
-      <button className="rsvp-btn">
+      <button
+        className="rsvp-btn"
+        onClick={() => setOpen(true)}
+      >
         CONFIRMAR ASISTENCIA
       </button>
+
+      {open && (
+        <AttendanceForm onCancel={() => setOpen(false)} />
+      )}
     </section>
   );
 }

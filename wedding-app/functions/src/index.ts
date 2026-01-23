@@ -51,6 +51,41 @@ async function sendWhatsAppMeta(
   });
 }
 
+
+export const onGuestAttendanceCreatedV2 = onDocumentCreated(
+  {
+    document: "attendances/{id}",
+    region: "us-central1",
+  },
+  async (event) => {
+    const data = event.data?.data();
+    if (!data) return;
+
+    const auth = new google.auth.GoogleAuth({
+      scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+    });
+
+    const sheets = google.sheets({ version: "v4", auth });
+
+    await sheets.spreadsheets.values.append({
+      spreadsheetId: "1crzFTw293zubVGYezeZAVCsp6r-vpTMlZMrqfnCtAUQ",
+      range: "Invitados!A:E", 
+      valueInputOption: "USER_ENTERED",
+      requestBody: {
+        values: [
+          [
+            new Date().toLocaleString(),
+            data.name || "",
+            data.family || "",
+            data.guests || "",
+            data.comments || "",
+          ],
+        ],
+      },
+    });
+  }
+);
+
 /* ================================
    FIRESTORE TRIGGER
    ================================ */
@@ -106,7 +141,7 @@ export const onGiftSelectionCreated = onDocumentCreated(
         data.message || "-",
         new Date().toLocaleString(),
       ]),
-      // sendWhatsAppMeta(NOTIFY_2, [...]) // si querés otro número
+      // sendWhatsAppMeta(NOTIFY_2, [...]) 
     ]);
   }
 );
