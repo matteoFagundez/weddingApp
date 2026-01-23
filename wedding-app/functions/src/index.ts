@@ -52,7 +52,7 @@ async function sendWhatsAppMeta(
 }
 
 
-export const onGuestAttendanceCreatedV2 = onDocumentCreated(
+export const onAttendanceSheet = onDocumentCreated(
   {
     document: "attendances/{id}",
     region: "us-central1",
@@ -69,22 +69,21 @@ export const onGuestAttendanceCreatedV2 = onDocumentCreated(
 
     await sheets.spreadsheets.values.append({
       spreadsheetId: "1crzFTw293zubVGYezeZAVCsp6r-vpTMlZMrqfnCtAUQ",
-      range: "Invitados!A:E", 
+      range: "Invitados!A:E",
       valueInputOption: "USER_ENTERED",
       requestBody: {
-        values: [
-          [
-            new Date().toLocaleString(),
-            data.name || "",
-            data.family || "",
-            data.guests || "",
-            data.comments || "",
-          ],
-        ],
+        values: [[
+          new Date().toLocaleString(),
+          data.name || "",
+          data.family || "",
+          data.guests || "",
+          data.comments || "",
+        ]],
       },
     });
   }
 );
+
 
 /* ================================
    FIRESTORE TRIGGER
