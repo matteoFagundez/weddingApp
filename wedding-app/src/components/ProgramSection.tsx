@@ -12,40 +12,40 @@ export function ProgramSection() {
 
       <div className="program-timeline">
         <TimelineItem
-          time="18:00 hrs"
-          text="Ceremonia"
-          img={iglesiaImg}
-          side="right"
-        />
-        <TimelineItem
-          time="19:00 hrs"
+          time="17:00 hrs Viernes 20"
           text="Boda Civil"
           img={anillosImg}
           side="left"
         />
         <TimelineItem
+          time="18:00 hrs Sabado 21"
+          text="Ceremonia"
+          img={iglesiaImg}
+          side="right"
+        />
+        <TimelineItem
           time="20:00 hrs"
           text="Recepción"
           img={copasImg}
-          side="right"
+          side="left"
         />
         <TimelineItem
           time="20:30 hrs"
           text="Cena"
           img={cenaImg}
-          side="left"
+          side="right"
         />
         <TimelineItem
           time="21:30 hrs"
           text="Todo el mundo a bailar"
           img={baileImg}
-          side="right"
+          side="left"
         />
         <TimelineItem
           time="2:00 hrs"
           text="Fin del evento"
           img={autoImg}
-          side="left"
+          side="right"
           last
         />
       </div>

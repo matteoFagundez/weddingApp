@@ -51,7 +51,7 @@ export function LocationsSection() {
 
             <h2 className="ceremony-title">CIVIL</h2>
 
-            <p className="ceremony-time">9:00 am</p>
+            <p className="ceremony-time">Viernes 17:00 pm</p>
 
             <p className="ceremony-place">Municipio La Floresta</p>
 

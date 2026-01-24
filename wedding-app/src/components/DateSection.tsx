@@ -11,8 +11,8 @@ export function DateSection() {
       </p>
 
       <div className="date-row">
-        <span className="date-day">VIERNES</span>
-        <span className="date-number">20</span>
+        <span className="date-day">SABADO</span>
+        <span className="date-number">21</span>
         <span className="date-month">MARZO</span>
       </div>
 
