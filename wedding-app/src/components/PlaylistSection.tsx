@@ -72,7 +72,7 @@ export function PlaylistSection() {
 
       <a
         className="playlist-btn"
-        href={`https://www.youtube.com/playlist?list=${PLAYLIST_ID}`}
+        href=" https://www.youtube.com/playlist?list=PLh_YeuldWOhroWUaiqZXNccLrTxYcsc6T&jct=sFjVPGxWfcxsB1NLuqnWvw"
         target="_blank"
         rel="noopener noreferrer"
       >
